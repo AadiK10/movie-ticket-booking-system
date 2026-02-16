@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="#">MovieBooking</a>
+
+    <div>
+
+      <% if(role === "admin"){ %>
+
+        <a class="btn btn-outline-light me-2" href="/adminDashboard">Dashboard</a>
+        <a class="btn btn-outline-light me-2" href="/admin/movies">Movies</a>
+        <a class="btn btn-outline-light me-2" href="/admin/shows">Shows</a>
+
+      <% } else { %>
+
+        <a class="btn btn-outline-light me-2" href="/dashboard">Home</a>
+        <a class="btn btn-outline-light me-2" href="/bookingHistory">My Bookings</a>
+
+      <% } %>
+
+      <a class="btn btn-danger" href="/logout">Logout</a>
+
+    </div>
+  </div>
+</nav>

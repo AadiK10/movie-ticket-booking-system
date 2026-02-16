@@ -1,0 +1,28 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-4">
+
+<h2>Add Show</h2>
+
+<form action="/admin/addShow" method="post">
+
+    Movie:
+    <select name="movieId">
+        <% movies.forEach(movie => { %>
+            <option value="<%= movie._id %>">
+                <%= movie.title %>
+            </option>
+        <% }) %>
+    </select>
+
+    Show Time: <input type="datetime-local" name="showTime"><br>
+    Theatre: <input type="text" name="theatre"><br>
+    Total Seats: <input type="number" name="totalSeats"><br>
+
+    <button type="submit">Add Show</button>
+</form>
+
+</div>
+
+<%- include("partials/footer") %>

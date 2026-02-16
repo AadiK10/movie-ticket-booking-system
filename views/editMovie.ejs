@@ -1,0 +1,21 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-4">
+
+
+<h2>Edit Movie</h2>
+
+<form action="/admin/editMovie/<%= movie._id %>?_method=patch" method="post">
+
+Title: <input type="text" name="title" value="<%= movie.title %>"><br>
+Description: <input type="text" name="description" value="<%= movie.description %>"><br>
+Duration: <input type="number" name="duration" value="<%= movie.duration %>"><br>
+Language: <input type="text" name="language" value="<%= movie.language %>"><br>
+
+<button type="submit">Update Movie</button>
+</form>
+
+</div>
+
+<%- include("partials/footer") %>

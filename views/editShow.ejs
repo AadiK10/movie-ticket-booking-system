@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-4">
+
+<h2>Edit Show</h2>
+
+<form action="/admin/editShow/<%= show._id %>?_method=patch" method="post">
+
+<div class="mb-3">
+<label>Theatre</label>
+<input type="text" name="theatre" class="form-control" value="<%= show.theatre %>">
+</div>
+
+<div class="mb-3">
+<label>Show Time</label>
+<input type="datetime-local" name="showTime" class="form-control"
+value="<%= show.showTime ? show.showTime.toISOString().slice(0,16) : '' %>">
+</div>
+
+<div class="mb-3">
+<label>Total Seats</label>
+<input type="number" name="totalSeats" class="form-control" value="<%= show.totalSeats %>">
+</div>
+
+<button class="btn btn-primary">Update Show</button>
+
+</form>
+
+</div>
+
+<%- include("partials/footer") %>

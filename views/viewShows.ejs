@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-4">
+
+
+<h2>All Shows</h2>
+
+<% shows.forEach(show => { %>
+    <div>
+        <h3>
+        <% if(show.movieId){ %>
+            <%= show.movieId.title %>
+        <% } else { %>
+            Movie Deleted
+        <% } %>
+        </h3>
+        <p>Theatre: <%= show.theatre %></p>
+        <p>Seats Left: <%= show.availableSeats %></p>
+        <a href="/admin/editShow/<%= show._id %>">Edit</a>
+        <form action="/admin/deleteShow/<%= show._id %>?_method=delete" method="post">
+        <button type="submit">Delete</button>
+        </form>
+    </div>
+<% }) %>
+
+</div>
+
+<%- include("partials/footer") %>
+
+
+

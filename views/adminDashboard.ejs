@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-4">
+
+<h2 class="mb-4">Admin Dashboard</h2>
+
+<p class="mb-4">Welcome <strong><%= name %></strong></p>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="card shadow p-4">
+            <h4 class="mb-3">Movie Management</h4>
+            <a href="/admin/addMovie" class="btn btn-primary mb-2">Add Movie</a>
+            <a href="/admin/movies" class="btn btn-secondary">View Movies</a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow p-4">
+            <h4 class="mb-3">Show Management</h4>
+            <a href="/admin/addShow" class="btn btn-primary mb-2">Add Show</a>
+            <a href="/admin/shows" class="btn btn-secondary">View Shows</a>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<%- include("partials/footer") %>

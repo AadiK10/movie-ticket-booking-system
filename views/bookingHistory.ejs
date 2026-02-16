@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-4">
+
+
+<h2>My Bookings</h2>
+
+<% bookings.forEach(booking => { %>
+    <div>
+        <h3><%= booking.showId.movieId.title %></h3>
+        <p>Theatre: <%= booking.showId.theatre %></p>
+        <p>Seats Booked: <%= booking.seatsBooked %></p>
+        <p>Date: <%= booking.createdAt.toDateString() %></p>
+        <form action="/cancelBooking/<%= booking._id %>?_method=delete" method="post">
+            <button type="submit">Cancel Booking</button>
+        </form>
+    </div>
+    <hr>
+<% }) %>
+
+
+
+</div>
+
+<%- include("partials/footer") %>

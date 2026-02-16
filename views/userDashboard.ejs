@@ -1,0 +1,39 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-4">
+
+<h2 class="mb-4">Available Shows</h2>
+
+<div class="row">
+
+<% shows.forEach(show => { %>
+
+    <div class="col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+
+                <h5 class="card-title"><%= show.movieId.title %></h5>
+
+                <p class="mb-1"><strong>Theatre:</strong> <%= show.theatre %></p>
+                <p class="mb-2"><strong>Seats Left:</strong> <%= show.availableSeats %></p>
+
+                <% if(show.availableSeats > 0){ %>
+                    <a href="/book/<%= show._id %>" class="btn btn-success">Book Ticket</a>
+                <% } else { %>
+                    <span class="badge bg-danger">Housefull</span>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+
+<% }) %>
+
+</div>
+
+<a href="/bookingHistory" class="btn btn-dark">My Bookings</a>
+
+</div>
+
+<%- include("partials/footer") %>
